@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8694111099673377391, guid: 6aea0a7b2131d2240a380c3fa29907ca, type: 3}
-  Count: 10
+  Count: 30
 --- !u!114 &1097686615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,8 +825,8 @@ MonoBehaviour:
   colums: 4
   horizontalSpacing: 3.5
   verticalSpacing: 5
+  maxRowDistance: 40
   spawnCenter: {x: -5, y: 4, z: -7}
-  spawnDistancePosition: {fileID: 458186782}
 --- !u!1 &1285264854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,6 +1532,11 @@ PrefabInstance:
     - target: {fileID: 2118165357, guid: 262a8c16a6ed5884493c9a92c8c53bff, type: 3}
       propertyPath: Speed
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787643670079815478, guid: 262a8c16a6ed5884493c9a92c8c53bff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 262a8c16a6ed5884493c9a92c8c53bff, type: 3}
