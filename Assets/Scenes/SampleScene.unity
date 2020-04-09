@@ -385,7 +385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f86fb5bad979f643b747269fab73358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 799172983}
 --- !u!81 &458186780
 AudioListener:
   m_ObjectHideFlags: 0
@@ -704,12 +703,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &799172983 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8107316107223534374, guid: 262a8c16a6ed5884493c9a92c8c53bff,
-    type: 3}
-  m_PrefabInstance: {fileID: 6467511039268068104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &892201866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,9 +1341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e9520246e90744994f1f370941f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modes: 0
+  modes: 1
   playerTag: Player
   distanceFromTarget: 10
+  cameraSpeed: 0.5
 --- !u!1001 &6467511039268068104
 PrefabInstance:
   m_ObjectHideFlags: 0

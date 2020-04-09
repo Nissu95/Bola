@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Modes modes;
     [SerializeField] string playerTag;
     [SerializeField] float distanceFromTarget;
+    [SerializeField] float cameraSpeed;
 
     Transform playerTrans;
     Transform cameraTrans;
@@ -47,5 +48,10 @@ public class GameManager : MonoBehaviour
     public float GetDistanceFromTarget()
     {
         return distanceFromTarget;
+    }
+
+    public float GetCameraSpeed()
+    {
+        return cameraSpeed;
     }
 }
