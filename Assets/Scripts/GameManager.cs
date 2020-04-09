@@ -4,15 +4,54 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager singleton;
+
+    [SerializeField] Modes modes;
+    [SerializeField] string playerTag;
+    [SerializeField] float distanceFromTarget;
+    [SerializeField] float cameraSpeed;
+
+    Transform playerTrans;
+    Transform cameraTrans;
+
+    void Awake()
     {
-        
+        DontDestroyOnLoad(this);
+        if (singleton != null)
+            Destroy(gameObject);
+        else
+            singleton = this;
+
+        GetGroundChecker groundChecker = FindObjectOfType<GetGroundChecker>();
+        if (groundChecker)
+            playerTrans = groundChecker.GetTransform();
+        //playerTrans = GameObject.FindGameObjectWithTag(playerTag).GetComponentInChildren<GetGroundChecker>().GetTransform();
+
+        cameraTrans = Camera.main.transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    public Modes GetGameMode()
     {
-        
+        return modes;
+    }
+
+    public Transform GetPlayerTrans()
+    {
+        return playerTrans;
+    }
+
+    public Transform GetCameraTrans()
+    {
+        return cameraTrans;
+    }
+
+    public float GetDistanceFromTarget()
+    {
+        return distanceFromTarget;
+    }
+
+    public float GetCameraSpeed()
+    {
+        return cameraSpeed;
     }
 }
