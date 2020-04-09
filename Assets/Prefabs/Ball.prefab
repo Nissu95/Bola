@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 2118165359}
   - component: {fileID: 2118165360}
   - component: {fileID: 2118165357}
+  - component: {fileID: 4381979961056834322}
   m_Layer: 8
   m_Name: Ball
   m_TagString: Untagged
@@ -220,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceDelay: 0.2
   bounceAnimationTrigger: Bounce
-  Speed: 200
+  Speed: 300
   JumpHeight: 10
   Gravity: -9.81
   GroundDistance: 0.1
@@ -228,3 +229,15 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 567
+--- !u!114 &4381979961056834322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467511040919847138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065dd67c2408ac247a4b2d7babf347b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
