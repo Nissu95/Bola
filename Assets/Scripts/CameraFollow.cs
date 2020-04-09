@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] float distanceFromTarget;
+    [SerializeField] protected Transform target;
+    [SerializeField] protected float distanceFromTarget;
 
-    void Update()
+    CameraFollow cameraFollow;
+    GameModes gm;
+
+    private void Start()
     {
-        Vector3 position = transform.position;
-        if (position.y < target.position.y - distanceFromTarget)
+        switch (GameManager.singleton.GetGameMode())
         {
-            position.y = target.position.y - distanceFromTarget;
-            transform.position = position;
+            case Modes.Normal:
+                gm = new NormalMode();
+                break;
+            case Modes.Hardcore:
+                gm = new HardcoreMode();
+                break;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        gm.Update(this.transform, target, distanceFromTarget);
     }
 }
