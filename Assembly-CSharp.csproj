@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Jelly\JellyVertex.cs" />
     <Compile Include="Assets\Scripts\Movimiento.cs" />
     <Compile Include="Assets\Scripts\PlatformManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerKill.cs" />
     <Compile Include="Assets\Scripts\Pool\Pool.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolObject.cs" />

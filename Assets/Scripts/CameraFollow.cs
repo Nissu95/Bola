@@ -10,9 +10,10 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         Vector3 position = transform.position;
-
-        position.y = target.position.y - distanceFromTarget;
-
-        transform.position = position;
+        if (position.y < target.position.y - distanceFromTarget)
+        {
+            position.y = target.position.y - distanceFromTarget;
+            transform.position = position;
+        }
     }
 }
