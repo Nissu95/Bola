@@ -6,5 +6,5 @@ public enum Modes { Normal, Hardcore}
 
 public class GameModes
 {
-    public virtual void Update(Transform cameraTrans, Transform target, float distanceFromTarget) { } 
+    public virtual void Update() { } 
 }

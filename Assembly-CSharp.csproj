@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GameModes\GameModes.cs" />
     <Compile Include="Assets\Scripts\GameModes\HardcoreMode.cs" />
     <Compile Include="Assets\Scripts\GameModes\NormalMode.cs" />
+    <Compile Include="Assets\Scripts\GetGroundChecker.cs" />
     <Compile Include="Assets\Scripts\Jelly\Jellifier.cs" />
     <Compile Include="Assets\Scripts\Jelly\JellyVertex.cs" />
     <Compile Include="Assets\Scripts\Movimiento.cs" />

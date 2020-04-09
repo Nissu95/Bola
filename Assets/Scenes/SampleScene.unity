@@ -386,7 +386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 799172983}
-  distanceFromTarget: 10
 --- !u!81 &458186780
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1349,7 +1348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e9520246e90744994f1f370941f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameModes: 0
+  modes: 0
+  playerTag: Player
+  distanceFromTarget: 10
 --- !u!1001 &6467511039268068104
 PrefabInstance:
   m_ObjectHideFlags: 0

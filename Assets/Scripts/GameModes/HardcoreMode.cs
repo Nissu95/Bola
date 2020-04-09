@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HardcoreMode : GameModes
 {
-    public override void Update(Transform cameraTrans, Transform target, float distanceFromTarget)
+    public override void Update()
     {
-        base.Update(cameraTrans, target, distanceFromTarget);
+
     }
 }

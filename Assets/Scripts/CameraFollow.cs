@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] protected Transform target;
-    [SerializeField] protected float distanceFromTarget;
-
-    CameraFollow cameraFollow;
     GameModes gm;
 
     private void Start()
@@ -25,6 +21,6 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        gm.Update(this.transform, target, distanceFromTarget);
+        gm.Update();
     }
 }
