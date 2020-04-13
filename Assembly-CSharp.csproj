@@ -66,13 +66,20 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameModes\GameModes.cs" />
+    <Compile Include="Assets\Scripts\GameModes\HardcoreMode.cs" />
+    <Compile Include="Assets\Scripts\GameModes\NormalMode.cs" />
+    <Compile Include="Assets\Scripts\GetGroundChecker.cs" />
     <Compile Include="Assets\Scripts\Jelly\Jellifier.cs" />
     <Compile Include="Assets\Scripts\Jelly\JellyVertex.cs" />
     <Compile Include="Assets\Scripts\Movimiento.cs" />
     <Compile Include="Assets\Scripts\PlatformManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerKill.cs" />
     <Compile Include="Assets\Scripts\Pool\Pool.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolObject.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\ScreenWrapScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
