@@ -47,11 +47,8 @@ public class PlatformManager : MonoBehaviour
         // Distance between the camera and the first platform
         float dist = cameraTransform.position.y - firstRowPos.y;
 
-        Debug.Log(dist);
-
         if (cameraTransform.position.y > firstRowPos.y && maxRowDistance < dist)
         {
-            Debug.Log("hola");
             RemoveFirstRow();
             AddRow();
         }
