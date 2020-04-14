@@ -37,13 +37,7 @@ public class BallBounce : MonoBehaviour
 
     void Update()
     {
-
-#if UNITY_EDITOR
-
-        float horizontal = Input.GetAxis("Horizontal");
-#else
-        float horizontal = Input.acceleration.x * Time.deltaTime * Speed;
-#endif
+        float horizontal = InputManager.singleton.GetHorizontalInputs();
 
         rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, rigidbody.velocity.z);
 

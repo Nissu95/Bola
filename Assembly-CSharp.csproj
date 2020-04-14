@@ -70,6 +70,10 @@
     <Compile Include="Assets\Scripts\GameModes\HardcoreMode.cs" />
     <Compile Include="Assets\Scripts\GameModes\NormalMode.cs" />
     <Compile Include="Assets\Scripts\GetGroundChecker.cs" />
+    <Compile Include="Assets\Scripts\Inputs\AllInputs.cs" />
+    <Compile Include="Assets\Scripts\Inputs\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Inputs\MobileInputs.cs" />
+    <Compile Include="Assets\Scripts\Inputs\PCInputs.cs" />
     <Compile Include="Assets\Scripts\Jelly\Jellifier.cs" />
     <Compile Include="Assets\Scripts\Jelly\JellyVertex.cs" />
     <Compile Include="Assets\Scripts\Movimiento.cs" />
@@ -81,31 +85,31 @@
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\ScreenWrapScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Testament/Desktop/bola/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

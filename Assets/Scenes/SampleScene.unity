@@ -1339,8 +1339,9 @@ GameObject:
   - component: {fileID: 1865286453}
   - component: {fileID: 1865286454}
   - component: {fileID: 1865286455}
+  - component: {fileID: 1865286456}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1372,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e9520246e90744994f1f370941f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modes: 1
+  modes: 0
   playerTag: Player
   distanceFromTarget: 10
   cameraSpeed: 0.5
@@ -1390,6 +1391,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPositionTransform: {fileID: 322355099}
   scoreText: {fileID: 1663312018}
+--- !u!114 &1865286456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865286452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c657812dfdc20478f77b10de0eadcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6467511039268068104
 PrefabInstance:
   m_ObjectHideFlags: 0
