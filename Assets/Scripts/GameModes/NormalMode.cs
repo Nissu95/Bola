@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class NormalMode : GameModes
 {
+    public override void Start()
+    {
+        cameraTrans = GameManager.singleton.GetCameraTrans();
+        target = GameManager.singleton.GetPlayerTrans();
+        distanceFromTarget = GameManager.singleton.GetDistanceFromTarget();
+    }
+
     public override void Update()
     {
-        Transform cameraTrans = GameManager.singleton.GetCameraTrans();
-        Transform target = GameManager.singleton.GetPlayerTrans();
-        float distanceFromTarget = GameManager.singleton.GetDistanceFromTarget();
-
         Vector3 position = cameraTrans.position;
         if (position.y < target.position.y - distanceFromTarget)
         {

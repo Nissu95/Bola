@@ -12,9 +12,11 @@ public class CameraFollow : MonoBehaviour
         {
             case Modes.Normal:
                 gm = new NormalMode();
+                gm.Start();
                 break;
             case Modes.Hardcore:
                 gm = new HardcoreMode();
+                gm.Start();
                 break;
         }
     }
