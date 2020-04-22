@@ -37,32 +37,30 @@ public class BallBounce : MonoBehaviour
 
     void Update()
     {
-
-#if UNITY_EDITOR
-
-        float horizontal = Input.GetAxis("Horizontal");
-#else
-        float horizontal = Input.acceleration.x * Time.deltaTime * Speed;
-#endif
+        float horizontal = InputManager.singleton.GetHorizontalInputs();
 
         rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, rigidbody.velocity.z);
 
         Vector3 move = new Vector3(horizontal, 0, 0);
 
-        rigidbody.velocity += move * Time.deltaTime * Speed;
+        rigidbody.velocity += move * Speed;
 
         //_controller.Move(move * Time.deltaTime * Speed);
 
-       // _velocity.y += Gravity * Time.deltaTime;
+        // _velocity.y += Gravity * Time.deltaTime;
 
         //_controller.Move(_velocity * Time.deltaTime);
 
 
+        if (rigidbody.velocity.magnitude > JumpHeight)
+            rigidbody.velocity = rigidbody.velocity.normalized * JumpHeight;
     }
 
     void Bounce()
     {
-        rigidbody.AddForce(0, 10, 0,ForceMode.Impulse);
+        rigidbody.AddForce(0, JumpHeight, 0,ForceMode.Impulse);
+
+
         jumping = false;
     }
 
@@ -85,5 +83,10 @@ public class BallBounce : MonoBehaviour
             animator.SetTrigger(bounceAnimationTrigger);
 
             Invoke("Bounce", bounceDelay);
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(20, 20, 200, 200), "rigidbody velocity: " + rigidbody.velocity);
     }
 }
