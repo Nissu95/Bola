@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ScreenWrapScript : MonoBehaviour
 {
-    Renderer[] renderers;
+    Plane[] planes;
+    Camera cam;
+    Collider thisCollider;
     bool isWrapping = false;
 
     void Start()
     {
-        renderers = GetComponentsInChildren<Renderer>();
+        cam = Camera.main;
+        planes = GeometryUtility.CalculateFrustumPlanes(cam);
+        thisCollider = GetComponent<Collider>();
     }
 
     void FixedUpdate()
@@ -30,7 +34,7 @@ public class ScreenWrapScript : MonoBehaviour
         if (isWrapping)
             return;
 
-        Camera cam = Camera.main;
+        
         Vector3 viewportPosition = cam.WorldToViewportPoint(transform.position);
         Vector3 newPos = transform.position;
 
@@ -45,9 +49,8 @@ public class ScreenWrapScript : MonoBehaviour
 
     bool CheckRenderers()
     {
-        foreach (Renderer renderer in renderers)
-            if (renderer.isVisible)
-                return true;
+        if (GeometryUtility.TestPlanesAABB(planes, thisCollider.bounds))
+            return true;
         return false;
     }
 }
