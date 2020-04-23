@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     Transform playerTrans;
     Transform cameraTrans;
+    GameObject loseMenu;
 
     void Awake()
     {
@@ -25,7 +26,6 @@ public class GameManager : MonoBehaviour
         GetGroundChecker groundChecker = FindObjectOfType<GetGroundChecker>();
         if (groundChecker)
             playerTrans = groundChecker.GetTransform();
-        //playerTrans = GameObject.FindGameObjectWithTag(playerTag).GetComponentInChildren<GetGroundChecker>().GetTransform();
 
         cameraTrans = Camera.main.transform;
     }
@@ -53,5 +53,16 @@ public class GameManager : MonoBehaviour
     public float GetCameraSpeed()
     {
         return cameraSpeed;
+    }
+
+    public void SetLoseMenu(GameObject _loseMenu)
+    {
+        loseMenu = _loseMenu;
+        loseMenu.SetActive(false);
+    }
+
+    public void DisplayLoseMenu()
+    {
+        loseMenu.SetActive(true);
     }
 }
