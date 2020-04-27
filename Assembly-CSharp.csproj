@@ -83,7 +83,6 @@
     <Compile Include="Assets\Scripts\Pool\Pool.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolObject.cs" />
-    <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\ScreenWrapScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/nicos/Desktop/Other/Bola/bola/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

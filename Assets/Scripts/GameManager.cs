@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,20 @@ public class GameManager : MonoBehaviour
 
     //.....................................................................
     //Menus 
+
     [SerializeField] GameObject loseMenu;
+
+    //.....................................................................
+    //Score
+
+    [SerializeField] Transform startPositionTransform;
+    [SerializeField] Text scoreText;
+    [SerializeField] Text highScoreText;
+    [SerializeField] Text scoreTextMenu;
+
+    int currentScore = 0;
+    int highScore = 0;
+    Vector3 startPostion;
 
     //.....................................................................
 
@@ -33,9 +47,23 @@ public class GameManager : MonoBehaviour
         if (groundChecker)
             playerTrans = groundChecker.GetTransform();
 
+        startPostion = startPositionTransform.position;
         cameraTrans = Camera.main.transform;
         ballBehaviour = FindObjectOfType<BallBehaviour>();
         loseMenu.SetActive(false);
+
+        UpdateScoreText();
+    }
+
+    private void Update()
+    {
+        float dis = (startPostion - playerTrans.position).magnitude;
+
+        if (playerTrans.position.y > startPostion.y && dis > currentScore)
+        {
+            currentScore = (int)dis;
+            UpdateScoreText();
+        }
     }
 
     public Modes GetGameMode()
@@ -65,10 +93,16 @@ public class GameManager : MonoBehaviour
 
     //.....................................................................
     //Menus 
+
     public void DisplayLoseMenu()
     {
         loseMenu.SetActive(true);
+        HighscoreSelection();
+
+        highScoreText.text = "Máxima puntuación: " + highScore.ToString();
+        scoreTextMenu.text = "Puntuación: " + currentScore.ToString();
     }
+
     //.....................................................................
     //Buttons
 
@@ -77,7 +111,24 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<CameraFollow>().ResetCamera();
         ballBehaviour.ResetPlayer();
         FindObjectOfType<PlatformManager>().ResetPlatforms();
+        currentScore = 0;
+        UpdateScoreText();
         loseMenu.SetActive(false);
     }
+
+    //.....................................................................
+    //Score
+
+    void UpdateScoreText()
+    {
+        scoreText.text = currentScore.ToString();
+    }
+
+    void HighscoreSelection()
+    {
+        if (highScore < currentScore)
+            highScore = currentScore;
+    }
+
     //.....................................................................
 }
