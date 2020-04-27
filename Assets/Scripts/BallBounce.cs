@@ -6,6 +6,8 @@ public class BallBounce : MonoBehaviour
     [SerializeField] float bounceDelay;
     [SerializeField] string bounceAnimationTrigger = "Bounce";
 
+    
+
     public float Speed = 5f;
     public float JumpHeight = 2f;
     public float Gravity = -9.81f;
@@ -51,9 +53,10 @@ public class BallBounce : MonoBehaviour
 
         //_controller.Move(_velocity * Time.deltaTime);
 
+        float yVelocity = rigidbody.velocity.y;        
 
-        if (rigidbody.velocity.magnitude > JumpHeight)
-            rigidbody.velocity = rigidbody.velocity.normalized * JumpHeight;
+        if (yVelocity > JumpHeight)
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, JumpHeight, rigidbody.velocity.z);
     }
 
     void Bounce()
