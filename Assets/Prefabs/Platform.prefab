@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6961291754559360691}
   - component: {fileID: 830424767272846184}
   - component: {fileID: 830424767272846191}
-  - component: {fileID: -8207385740080267174}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -109,16 +108,3 @@ MonoBehaviour:
   bounceSpeed: 5
   fallForce: 0.4
   stiffness: 1
---- !u!114 &-8207385740080267174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694111099673377391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0749fa9e5d8a38648ad42ab1c0888ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool: {fileID: 0}

@@ -11,9 +11,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] float distanceFromTarget;
     [SerializeField] float cameraSpeed;
 
+    //.....................................................................
+    //Menus 
+    [SerializeField] GameObject loseMenu;
+
+    //.....................................................................
+
     Transform playerTrans;
     Transform cameraTrans;
-    GameObject loseMenu;
+    BallBehaviour ballBehaviour;
 
     void Awake()
     {
@@ -28,6 +34,8 @@ public class GameManager : MonoBehaviour
             playerTrans = groundChecker.GetTransform();
 
         cameraTrans = Camera.main.transform;
+        ballBehaviour = FindObjectOfType<BallBehaviour>();
+        loseMenu.SetActive(false);
     }
 
     public Modes GetGameMode()
@@ -55,14 +63,21 @@ public class GameManager : MonoBehaviour
         return cameraSpeed;
     }
 
-    public void SetLoseMenu(GameObject _loseMenu)
-    {
-        loseMenu = _loseMenu;
-        loseMenu.SetActive(false);
-    }
-
+    //.....................................................................
+    //Menus 
     public void DisplayLoseMenu()
     {
         loseMenu.SetActive(true);
     }
+    //.....................................................................
+    //Buttons
+
+    public void RetryButton()
+    {
+        FindObjectOfType<CameraFollow>().ResetCamera();
+        ballBehaviour.ResetPlayer();
+        FindObjectOfType<PlatformManager>().ResetPlatforms();
+        loseMenu.SetActive(false);
+    }
+    //.....................................................................
 }
