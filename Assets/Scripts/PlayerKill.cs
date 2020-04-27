@@ -9,7 +9,6 @@ public class PlayerKill : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
-            Debug.Log("You lose");
+            other.GetComponent<BallBehaviour>().PlayerLose();
     }
-
 }
