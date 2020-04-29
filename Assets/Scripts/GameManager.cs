@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour
     //.....................................................................
     //Menus 
 
+    [SerializeField] GameObject game;
     [SerializeField] GameObject loseMenu;
+    [SerializeField] GameObject mainMenu;
 
     //.....................................................................
     //Score
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
         loseMenu.SetActive(false);
 
         UpdateScoreText();
+        game.SetActive(false);
     }
 
     private void Update()
@@ -114,6 +117,39 @@ public class GameManager : MonoBehaviour
         currentScore = 0;
         UpdateScoreText();
         loseMenu.SetActive(false);
+    }
+
+    public void BackToMenuButton()
+    {
+        game.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void PlayButton()
+    {
+        mainMenu.SetActive(false);
+        game.SetActive(true);
+        FindObjectOfType<CameraFollow>().ResetCamera();
+        ballBehaviour.ResetPlayer();
+        FindObjectOfType<PlatformManager>().ResetPlatforms();
+        currentScore = 0;
+        UpdateScoreText();
+        loseMenu.SetActive(false);
+    }
+
+    public void HighscoreButton()
+    {
+
+    }
+
+    public void SettingsButton()
+    {
+
+    }
+
+    public void ExitButton()
+    {
+        Application.Quit();
     }
 
     //.....................................................................
