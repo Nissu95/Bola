@@ -23,13 +23,8 @@ public class PlatformManager : MonoBehaviour
     private void Start()
     {
         platformsPool = PoolManager.GetInstance().GetPool("PlatformPool");
-
         cameraTransform = Camera.main.transform;
-
-
         maxRowDistance = (rows / 2) * verticalSpacing;
-
-
 
         for (int i = 0; i < rows; i++)
         {
@@ -47,11 +42,8 @@ public class PlatformManager : MonoBehaviour
         // Distance between the camera and the first platform
         float dist = cameraTransform.position.y - firstRowPos.y;
 
-        Debug.Log(dist);
-
         if (cameraTransform.position.y > firstRowPos.y && maxRowDistance < dist)
         {
-            Debug.Log("hola");
             RemoveFirstRow();
             AddRow();
         }
@@ -106,5 +98,17 @@ public class PlatformManager : MonoBehaviour
             firstRow[i].Recycle();
 
         firstRowAdded++;
+    }
+
+    public void ResetPlatforms()
+    {
+        firstRowAdded = 0;
+        lastRowAdded = 0;
+        platformsPool.ResetPool();
+
+        for (int i = 0; i < rows; i++)
+        {
+            AddRow();
+        }
     }
 }
