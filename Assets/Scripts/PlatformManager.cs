@@ -105,6 +105,7 @@ public class PlatformManager : MonoBehaviour
         firstRowAdded = 0;
         lastRowAdded = 0;
         platformsPool.ResetPool();
+        platformObjects.Clear();
 
         for (int i = 0; i < rows; i++)
         {
