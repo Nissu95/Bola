@@ -30,7 +30,6 @@ public class PlatformManager : MonoBehaviour
         {
             AddRow();
         }
-
     }
 
     void Update()
@@ -52,11 +51,8 @@ public class PlatformManager : MonoBehaviour
     void AddRow()
     {
         int randomPlatforms = Random.Range(1, colums);
-
-
         int[] randomSelection = new int[colums];
-
-
+        
         do
         {
             int selector = Random.Range(0, randomSelection.Length);
@@ -86,7 +82,6 @@ public class PlatformManager : MonoBehaviour
         }
 
         lastRowAdded++;
-
         platformObjects.Enqueue(platformsRow);
     }
 
@@ -104,11 +99,12 @@ public class PlatformManager : MonoBehaviour
     {
         firstRowAdded = 0;
         lastRowAdded = 0;
-        platformsPool.ResetPool();
 
-        for (int i = 0; i < rows; i++)
+        if (platformsPool)
         {
-            AddRow();
+            platformsPool.ResetPool();
+            for (int i = 0; i < rows; i++)
+                AddRow();
         }
     }
 }
