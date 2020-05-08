@@ -15,7 +15,10 @@ public class GameManager : MonoBehaviour
     //.....................................................................
     //Menus 
 
+    [SerializeField] GameObject game;
     [SerializeField] GameObject loseMenu;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject pauseMenu;
 
     //.....................................................................
     //Score
@@ -53,6 +56,7 @@ public class GameManager : MonoBehaviour
         loseMenu.SetActive(false);
 
         UpdateScoreText();
+        game.SetActive(false);
     }
 
     private void Update()
@@ -111,9 +115,69 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<CameraFollow>().ResetCamera();
         ballBehaviour.ResetPlayer();
         FindObjectOfType<PlatformManager>().ResetPlatforms();
+        ResumeButton();
         currentScore = 0;
         UpdateScoreText();
         loseMenu.SetActive(false);
+    }
+
+    public void BackToMenuButton()
+    {
+        ResumeButton();
+        game.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void PlayButton()
+    {
+        mainMenu.SetActive(false);
+        game.SetActive(true);
+        FindObjectOfType<CameraFollow>().ResetCamera();
+        ballBehaviour.ResetPlayer();
+        FindObjectOfType<PlatformManager>().ResetPlatforms();
+        currentScore = 0;
+        UpdateScoreText();
+        loseMenu.SetActive(false);
+    }
+
+    public void PauseButton()
+    {
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+    }
+
+    public void ResumeButton()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void MuteButton()
+    {
+        switch (AudioListener.pause)
+        {
+            case true:
+                AudioListener.pause = false;
+                break;
+            case false:
+                AudioListener.pause = true;
+                break;
+        }
+    }
+
+    public void HighscoreButton()
+    {
+
+    }
+
+    public void SettingsButton()
+    {
+
+    }
+
+    public void ExitButton()
+    {
+        Application.Quit();
     }
 
     //.....................................................................
