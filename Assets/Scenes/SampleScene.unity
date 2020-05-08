@@ -3947,7 +3947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e9520246e90744994f1f370941f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modes: 0
+  modes: 1
   playerTag: Player
   distanceFromTarget: 0
   cameraSpeed: 0.5
