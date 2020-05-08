@@ -19,6 +19,7 @@ public class BallBounce : MonoBehaviour
     private Vector3 _velocity;
     private bool _isGrounded = true;
     private Transform _groundChecker;
+    private SphereCollider sphereCollider;
 
     bool jumping = false;
 
@@ -35,6 +36,8 @@ public class BallBounce : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         _groundChecker = transform.GetChild(0);
+
+        sphereCollider = GetComponent<SphereCollider>();
     }
 
     void Update()
@@ -57,6 +60,11 @@ public class BallBounce : MonoBehaviour
 
         if (yVelocity > JumpHeight)
             rigidbody.velocity = new Vector3(rigidbody.velocity.x, JumpHeight, rigidbody.velocity.z);
+
+        if (yVelocity > 0)
+            sphereCollider.enabled = false;
+        else if (yVelocity < 0)
+            sphereCollider.enabled = true;
     }
 
     void Bounce()
