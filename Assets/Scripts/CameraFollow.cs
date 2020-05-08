@@ -5,16 +5,20 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     GameModes gm;
+    Vector3 initialPos;
 
     private void Start()
     {
+        initialPos = transform.position;
         switch (GameManager.singleton.GetGameMode())
         {
             case Modes.Normal:
                 gm = new NormalMode();
+                gm.Start();
                 break;
             case Modes.Hardcore:
                 gm = new HardcoreMode();
+                gm.Start();
                 break;
         }
     }
@@ -22,5 +26,10 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
         gm.Update();
+    }
+
+    public void ResetCamera()
+    {
+        transform.position = initialPos;
     }
 }
