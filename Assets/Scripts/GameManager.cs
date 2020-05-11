@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager singleton;
-
-    [SerializeField] Modes modes;
+    
     [SerializeField] string playerTag;
     [SerializeField] float distanceFromTarget;
     [SerializeField] float cameraSpeed;
@@ -34,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     //.....................................................................
 
+    Modes modes;
     Transform playerTrans;
     Transform cameraTrans;
     BallBehaviour ballBehaviour;
@@ -112,10 +112,17 @@ public class GameManager : MonoBehaviour
 
     public void RetryButton()
     {
-        FindObjectOfType<CameraFollow>().ResetCamera();
+        CameraFollow cameraFollow = FindObjectOfType<CameraFollow>();
+        cameraFollow.ResetCamera();
+        cameraFollow.ResetGameMode();
+        cameraFollow.SetGameMode();
+
         ballBehaviour.ResetPlayer();
+
         FindObjectOfType<PlatformManager>().ResetPlatforms();
+
         ResumeButton();
+
         currentScore = 0;
         UpdateScoreText();
         loseMenu.SetActive(false);
@@ -123,18 +130,51 @@ public class GameManager : MonoBehaviour
 
     public void BackToMenuButton()
     {
+        CameraFollow cameraFollow = FindObjectOfType<CameraFollow>();
+        cameraFollow.ResetCamera();
+        cameraFollow.ResetGameMode();
+
         ResumeButton();
+
         game.SetActive(false);
         mainMenu.SetActive(true);
     }
 
-    public void PlayButton()
+    public void NormalModeButton()
     {
+        modes = Modes.Normal;
+
         mainMenu.SetActive(false);
         game.SetActive(true);
-        FindObjectOfType<CameraFollow>().ResetCamera();
+
+        CameraFollow cameraFollow = FindObjectOfType<CameraFollow>();
+        cameraFollow.ResetCamera();
+        cameraFollow.SetGameMode();
+
         ballBehaviour.ResetPlayer();
+
         FindObjectOfType<PlatformManager>().ResetPlatforms();
+
+        currentScore = 0;
+        UpdateScoreText();
+        loseMenu.SetActive(false);
+    }
+
+    public void HardcoreModeButton()
+    {
+        modes = Modes.Hardcore;
+
+        mainMenu.SetActive(false);
+        game.SetActive(true);
+
+        CameraFollow cameraFollow = FindObjectOfType<CameraFollow>();
+        cameraFollow.ResetCamera();
+        cameraFollow.SetGameMode();
+
+        ballBehaviour.ResetPlayer();
+
+        FindObjectOfType<PlatformManager>().ResetPlatforms();
+
         currentScore = 0;
         UpdateScoreText();
         loseMenu.SetActive(false);

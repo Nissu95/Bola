@@ -11,6 +11,7 @@ public class GameModes
     protected float distanceFromTarget;
     protected float speed;
 
-    public virtual void Start() { }
-    public virtual void Update() { } 
+    //public virtual void Start() { }
+    public virtual void Update() { }
+    public virtual void Delete() { }
 }

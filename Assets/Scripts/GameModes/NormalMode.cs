@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class NormalMode : GameModes
 {
-    public override void Start()
+    public NormalMode()
     {
         cameraTrans = GameManager.singleton.GetCameraTrans();
         target = GameManager.singleton.GetPlayerTrans();
         distanceFromTarget = GameManager.singleton.GetDistanceFromTarget();
     }
+
+    /*public override void Start()
+    {
+        cameraTrans = GameManager.singleton.GetCameraTrans();
+        target = GameManager.singleton.GetPlayerTrans();
+        distanceFromTarget = GameManager.singleton.GetDistanceFromTarget();
+    }*/
 
     public override void Update()
     {
@@ -19,5 +26,10 @@ public class NormalMode : GameModes
             position.y = target.position.y - distanceFromTarget;
             cameraTrans.position = position;
         }
+    }
+
+    public override void Delete()
+    {
+        base.Delete();
     }
 }
