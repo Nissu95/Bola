@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BallBounce : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class BallBounce : MonoBehaviour
     private bool _isGrounded = true;
     private Transform _groundChecker;
     private SphereCollider sphereCollider;
+    private BoxCollider groundCheckHitbox;
 
     bool jumping = false;
 
@@ -38,6 +40,7 @@ public class BallBounce : MonoBehaviour
         _groundChecker = transform.GetChild(0);
 
         sphereCollider = GetComponent<SphereCollider>();
+        groundCheckHitbox = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -62,9 +65,15 @@ public class BallBounce : MonoBehaviour
             rigidbody.velocity = new Vector3(rigidbody.velocity.x, JumpHeight, rigidbody.velocity.z);
 
         if (yVelocity > 0)
+        {
             sphereCollider.enabled = false;
+            groundCheckHitbox.enabled = false;
+        }
         else if (yVelocity < 0)
+        {
             sphereCollider.enabled = true;
+            groundCheckHitbox.enabled = true;
+        }
     }
 
     void Bounce()
