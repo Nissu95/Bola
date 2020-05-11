@@ -9,7 +9,6 @@ public class Timer
     public void Count()
     {
         time += Time.deltaTime;
-        Debug.Log(time);
     }
 
     public float GetTime()

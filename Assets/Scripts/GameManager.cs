@@ -100,6 +100,8 @@ public class GameManager : MonoBehaviour
 
     public void DisplayLoseMenu()
     {
+        Time.timeScale = 0;
+
         loseMenu.SetActive(true);
         HighscoreSelection();
 
