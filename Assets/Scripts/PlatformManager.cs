@@ -99,6 +99,8 @@ public class PlatformManager : MonoBehaviour
     {
         firstRowAdded = 0;
         lastRowAdded = 0;
+        platformsPool.ResetPool();
+        platformObjects.Clear();
 
         if (platformsPool)
         {

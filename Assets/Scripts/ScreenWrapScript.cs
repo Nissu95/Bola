@@ -12,7 +12,7 @@ public class ScreenWrapScript : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        planes = GeometryUtility.CalculateFrustumPlanes(cam);
+        //planes = GeometryUtility.CalculateFrustumPlanes(cam);
         thisCollider = GetComponent<Collider>();
     }
 
@@ -49,6 +49,7 @@ public class ScreenWrapScript : MonoBehaviour
 
     bool CheckRenderers()
     {
+        planes = GeometryUtility.CalculateFrustumPlanes(cam);
         if (GeometryUtility.TestPlanesAABB(planes, thisCollider.bounds))
             return true;
         return false;

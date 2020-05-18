@@ -136,6 +136,8 @@ public class GameManager : MonoBehaviour
         cameraFollow.ResetCamera();
         cameraFollow.ResetGameMode();
 
+        FindObjectOfType<PlatformManager>().ResetPlatforms();
+
         ResumeButton();
 
         game.SetActive(false);
@@ -155,8 +157,6 @@ public class GameManager : MonoBehaviour
 
         ballBehaviour.ResetPlayer();
 
-        FindObjectOfType<PlatformManager>().ResetPlatforms();
-
         currentScore = 0;
         UpdateScoreText();
         loseMenu.SetActive(false);
@@ -174,8 +174,6 @@ public class GameManager : MonoBehaviour
         cameraFollow.SetGameMode();
 
         ballBehaviour.ResetPlayer();
-
-        FindObjectOfType<PlatformManager>().ResetPlatforms();
 
         currentScore = 0;
         UpdateScoreText();
